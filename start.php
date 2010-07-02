@@ -8,5 +8,6 @@ function html5_init() {
 	elgg_extend_view('css', 'html5/css');
 	
 	elgg_view_register_simplecache('scripts/html5');
-	elgg_view_register_simplecache('html5/css');
 }
+
+register_elgg_event_handler('init', 'system', 'html5_init');
