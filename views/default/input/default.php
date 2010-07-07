@@ -50,9 +50,6 @@ $defaults = array(
 
 $attributes = array_merge($defaults, $vars);
 
-$attributes['value'] = htmlspecialchars($attributes['value'], ENT_QUOTES, 'UTF-8');
-
-
 //Build the input
 $element = array();
 
@@ -61,11 +58,10 @@ foreach ($attributes as $attr => $val) {
 	if ($val === TRUE) {
 		$element[] = $attr;
 	} elseif ($val !== FALSE) {
-		$val = addslashes($val);
 		$element[] = "$attr=\"$val\"";
 	}
 }
 $element[] = $js;
 $element[] = "/>";
 
-echo implode(" ", $tag);
+echo implode(" ", $element);
