@@ -45,7 +45,6 @@ if (isset($vars['js'])) {
 // default attributes
 $defaults = array(
 	'type' => 'text',
-	'value'	=> '',
 );
 
 $attributes = array_merge($defaults, $vars);
@@ -58,6 +57,7 @@ foreach ($attributes as $attr => $val) {
 	if ($val === TRUE) {
 		$element[] = $attr;
 	} elseif ($val !== FALSE) {
+		$val = htmlspecialchars($val);
 		$element[] = "$attr=\"$val\"";
 	}
 }
