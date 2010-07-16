@@ -15,7 +15,7 @@ header('Content-type: text/html; charset=utf-8');
 
 ?>
 
-<!DOCTYPE html>
+<!doctype html>
 <html>
 <?php echo elgg_view('page_elements/head', $vars); ?>
 <body>
