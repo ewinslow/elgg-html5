@@ -21,8 +21,8 @@ CACHE:
 {$CONFIG->url}vendors/jquery/jquery-ui-1.7.2.min.js
 {$CONFIG->url}vendors/jquery/jquery.form.js
 {$CONFIG->url}vendors/jquery/jquery.easing.1.3.packed.js
-{$CONFIG->url}_css/js.php?js=initialise_elgg&viewtype=$viewtype&lastcache={$CONFIG->lastcache}
-{$CONFIG->url}_css/js.php?js=friendsPickerv1&viewtype=$viewtype&lastcache={$CONFIG->lastcache}
+{$CONFIG->url}_css/js.php?lastcache={$CONFIG->lastcache}&js=initialise_elgg&viewtype=$viewtype
+{$CONFIG->url}_css/js.php?lastcache={$CONFIG->lastcache}&js=friendsPickerv1&viewtype=$viewtype
 
 NETWORK:
 *
