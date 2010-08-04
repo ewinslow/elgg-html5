@@ -52,7 +52,7 @@ $version = get_version();
 $release = get_version(true);
 ?>
 <!doctype html>
-<html>
+<html manifest="<?php echo $vars['url']; ?>mod/html5/cache.manifest.php?viewtype=<?php echo $vars['view']; ?>">
 <head>
 	<meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
 	<meta name="ElggRelease" content="<?php echo $release; ?>" />
