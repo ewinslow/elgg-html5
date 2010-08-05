@@ -1,6 +1,6 @@
 <?php
 $defaults = array(
-	'placeholder' => 'yyyy-mm-ddThh:mm:ss',
+	'placeholder' => 'yyyy-mm-ddThh:mm:ss+hh:mm',
 );
 
 $overrides = array(
@@ -8,7 +8,7 @@ $overrides = array(
 );
 
 if (isset($vars['value']) && is_int($vars['value'])) {
-	$vars['value'] = date("Y-m-d\TH:i:s", $vars['value']);
+	$vars['value'] = date("c", $vars['value']);
 }
 
 echo elgg_view('input/default', array_merge($defaults, $vars, $overrides));
