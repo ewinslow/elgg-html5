@@ -1,9 +1,11 @@
 <?php
 
+$defauts = array(
+	'placeholder' => elgg_echo('placeholder:week'),
+);
+
 $overrides = array(
 	'type' => 'week',
 );
 
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('input/default', $args);
+echo elgg_view('input/default', array_merge($defaults, $vars, $overrides));

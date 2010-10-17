@@ -1,6 +1,6 @@
 <?php
 $defaults = array(
-	'placeholder' => 'yyyy-mm-dd',
+	'placeholder' => elgg_echo('placeholder:date'), //'yyyy-mm-dd',
 );
 
 $overrides = array(

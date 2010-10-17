@@ -1,10 +1,14 @@
 <?php
 
+$defaults = array(
+
+);
+
 $overrides = array(
 	'tag' => 'option',
 );
 
-$args = array_merge($vars, $overrides);
+$args = array_merge($defaults, $vars, $overrides);
 
 if (!isset($args['body'])) {
 	$args['body'] = $args['value'];

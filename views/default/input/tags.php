@@ -19,6 +19,7 @@
 
 $defaults = array(
 	'class' => 'input-tags',
+	'placeholder' => elgg_echo('placeholder:tags'),
 );
 
 if (isset($vars['value']) && is_array($vars['value'])) {

@@ -1,10 +1,11 @@
 <?php
 
-$overrides = array(
-	'type' => 'file',
-	'value' => FALSE,
+$defaults = array(
+
 );
 
-$args = array_merge($vars, $overrides);
+$overrides = array(
+	'type' => 'file',
+);
 
-echo elgg_view('input/default', $args);
+echo elgg_view('input/default', array_merge($defaults, $vars, $overrides));

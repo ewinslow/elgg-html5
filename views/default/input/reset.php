@@ -1,9 +1,11 @@
 <?php
 
+$defaults = array(
+	'value' => elgg_echo('reset'),
+);
+
 $overrides = array(
 	'type' => 'reset',
 );
 
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('input/default', $args);
+echo elgg_view('input/default', array_merge($defaults, $vars, $overrides));

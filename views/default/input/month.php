@@ -1,6 +1,6 @@
 <?php
 $defaults = array(
-	'placeholder' => 'yyyy-mm',
+	'placeholder' => elgg_echo('placeholder:month'),
 );
 
 $overrides = array(

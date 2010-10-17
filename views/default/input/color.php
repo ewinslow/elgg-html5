@@ -1,9 +1,11 @@
 <?php
 
+$defaults = array(
+	'placeholder' => elgg_echo('placeholder:color'),
+);
+
 $overrides = array(
 	'type' => 'color',
 );
 
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('input/default', $args);
+echo elgg_view('input/default', array_merge($defaults, $vars, $overrides));

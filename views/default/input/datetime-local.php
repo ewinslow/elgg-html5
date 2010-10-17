@@ -1,6 +1,6 @@
 <?php
 $defaults = array(
-	'placeholder' => 'yyyy-mm-ddThh:mm:ss',
+	'placeholder' => elgg_echo('placeholder:datetime-local'), //'yyyy-mm-ddThh:mm:ss',
 );
 
 $overrides = array(
