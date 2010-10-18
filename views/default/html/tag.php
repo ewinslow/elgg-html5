@@ -28,12 +28,16 @@ if (isset($vars['js'])) {
 }
 
 $tag = $vars['tag'];
+unset($vars['tag']);
+
+$body = $vars['body'];
+unset($vars['body']);
 
 //Build the input
 $element = array();
 
 $element[] = "<$tag";
-foreach ($attributes as $attr => $val) {
+foreach ($vars as $attr => $val) {
 	if ($val === TRUE) {
 		$element[] = $attr;
 	} elseif ($val !== FALSE) {
@@ -46,12 +50,12 @@ if (!empty($js)) {
 	$element[] = $js;
 }
 
-if (!isset($vars['body'])) {
+if (!isset($body)) {
 	$element[] = '/';
 }
 
 echo implode(" ", $element).">";
 
-if (isset($vars['body'])) {
-	echo $vars['body']."</$tag>";
+if (isset($body)) {
+	echo "$body</$tag>";
 }
