@@ -41,7 +41,17 @@ foreach ($attributes as $attr => $val) {
 		$element[] = "$attr=\"$val\"";
 	}
 }
-$element[] = $js;
-$element[] = "/>";
 
-echo implode(" ", $element);
+if (!empty($js)) {
+	$element[] = $js;
+}
+
+if (!isset($vars['body'])) {
+	$element[] = '/';
+}
+
+echo implode(" ", $element).">";
+
+if (isset($vars['body'])) {
+	echo $vars['body']."</$tag>";
+}
