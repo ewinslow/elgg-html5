@@ -43,7 +43,7 @@ $element[] = "<$tag";
 foreach ($vars as $attr => $val) {
 	if ($val === TRUE) {
 		$element[] = $attr;
-	} elseif ($val !== FALSE) {
+	} elseif (!empty($val)) {
 		$val = htmlspecialchars($val);
 		$element[] = "$attr=\"$val\"";
 	}
