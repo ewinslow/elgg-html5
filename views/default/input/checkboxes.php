@@ -44,7 +44,7 @@ if ($options) {
 	foreach($options as $option => $label) {
 		$opts = array(
 			'value' => $option,
-			'checked' => in_array(strtolower($option), $value_array)),
+			'checked' => in_array(strtolower($option), $value_array),
 			'class' => $args['class'],
 			'disabled' => $args['disabled'],
 			'js' => $args['js'],
