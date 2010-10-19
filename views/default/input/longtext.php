@@ -15,19 +15,7 @@
  */
 
 $defaults = array(
-	'class' => 'input-textarea',
+	'class' => 'input-richtext',
 );
 
-$overrides = array(
-	'tag' => 'textarea',
-);
-
-$args = array_merge($defaults, $vars, $overrides);
-
-if (isset($args['value'])) {
-	$args['body'] = $args['value'];
-}
-
-$args['class'] = $args['class'].' input-richtext';
-
-echo elgg_view('html/tag', $args);
+echo elgg_view('html/textarea', array_merge($defaults, $vars));

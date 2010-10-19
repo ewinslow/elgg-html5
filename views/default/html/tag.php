@@ -12,17 +12,20 @@ foreach ($_SESSION as $key=>$value) {
 
 // backwards compatibility code
 if (isset($vars['internalname'])) {
+	//@todo put deprecated notice
 	$vars['name'] = $vars['internalname'];
 	unset($vars['internalname']);
 }
 
 if (isset($vars['internalid'])) {
+	//@todo put deprecated notice
 	$vars['id'] = $vars['internalid'];
 	unset($vars['internalid']);
 }
 
 $js = '';
 if (isset($vars['js'])) {
+	//@todo put deprecated notice
 	$js = $vars['js'];
 	unset($vars['js']);
 }

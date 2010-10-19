@@ -9,4 +9,4 @@ $overrides = array(
 
 $args = array_merge($defaults, $vars, $overrides);
 
-echo elgg_view('input/default', $args);
+echo elgg_view('html/input', $args);

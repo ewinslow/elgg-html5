@@ -15,15 +15,5 @@
  * including javascript event attributes such as onclick.
  */
 
-// default attributes
-$defaults = array(
-	'type' => 'text',
-);
-
-$overrides = array(
-	'tag' => 'input',
-);
-
-$args = array_merge($defaults, $vars, $overrides);
-
-echo elgg_view('html/tag', $args);
+//@todo put deprecated notice
+echo elgg_view('html/input', $vars);

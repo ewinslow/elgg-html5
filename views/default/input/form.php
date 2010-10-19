@@ -17,23 +17,10 @@
  *
  */
 
-
-$defaults = array(
-	'method' => 'POST',
-	'body' => '',
-);
-
-$overrides = array(
-	'tag' => 'form',
-);
-
-$disable_security = $vars['disable_security'];
-unset($vars['disable_security']);
-
-$args = array_merge($defaults, $vars, $overrides);
-
-if ($disable_security != TRUE) {
-	$args['body'] .= elgg_view('input/securitytoken');
+if ($vars['disable_security'] != TRUE) {
+	$vars['body'] .= elgg_view('input/securitytoken');
 }
 
-echo elgg_view('html/tag', $args);
+unset($vars['disable_security']);
+
+echo elgg_view('html/form', $vars);
