@@ -3,11 +3,9 @@
 $defaults = array(
 	'alt' => '',
 	'title' => '',
+	'border' => 0,
 );
 
-$overrides = array(
-	'tag' => 'img',
-	'body' => NULL,
-);
+$attributes = html5_get_html_attributes(array_merge($defaults, $vars));
 
-echo elgg_view('html/tag', array_merge($defaults, $vars, $overrides));
+echo "<img $attributes />";

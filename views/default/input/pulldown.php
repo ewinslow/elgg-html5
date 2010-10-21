@@ -9,9 +9,6 @@
  * @author Curverider Ltd
  * @link http://elgg.org/
  *
- * @uses $vars['value'] The current value, if any
- * @uses $vars['js'] Any Javascript to enter into the input tag
- * @uses $vars['internalname'] The name of the input field
  * @uses $vars['options'] An array of strings representing the options for the pulldown field
  * @uses $vars['options_values'] An associative array of "value" => "option" where "value" is an internal name and "option" is
  * 								 the value displayed on the button. Replaces $vars['options'] when defined.
@@ -21,35 +18,35 @@ $defaults = array(
 	'class' => 'input-pulldown',
 );
 
-$overrides = array(
-	'tag' => 'select',
-);
+$vars = array_merge($defaults, $vars);
 
-$args = array_merge($defaults, $vars, $overrides);
+$options_values = $vars['options_values'];
+unset($vars['options_values']);
 
-$body = '';
+$options = $vars['options'];
+unset($options);
 
-if ($vars['options_values']) {
-	foreach($vars['options_values'] as $value => $option) {
-		$option_args = array(
-			'value' => $value,
-			'body' => $option,
-			'selected' => ($value == $args['value']),
-		);
-		
-		$body .= elgg_view('input/option', $option_args);
+$value = $vars['value'];
+unset($vars['value']);
+?>
+
+<select <?php echo html5_get_html_attributes($vars); ?>>
+<?php 
+if ($options_values) {
+	foreach($options_values as $opt_val => $opt_text) {
+		echo elgg_view('input/option', array(
+			'value' => $opt_val,
+			'text' => $opt_text,
+			'selected' => ($opt_val == $value),
+		));
 	}
 } else {
-	foreach($vars['options'] as $option) {
-		$option_args = array(
-			'body' => $option,
-			'selected' => ($option == $args['value']),
-		);
-		
-		$body .= elgg_view('input/option', $option_args);
+	foreach($options as $option) {
+		echo elgg_view('input/option', array(
+			'text' => $option,
+			'selected' => ($option == $value),
+		));
 	}
 }
-
-$args['body'] = $body;
-
-echo elgg_view('html/tag', $args);
+?>
+</select>

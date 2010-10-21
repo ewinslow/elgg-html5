@@ -4,8 +4,7 @@ $defauts = array(
 	'placeholder' => elgg_echo('placeholder:week'),
 );
 
-$overrides = array(
-	'type' => 'week',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-echo elgg_view('html/input', array_merge($defaults, $vars, $overrides));
+<input type="week" <?php echo html5_get_html_attributes($vars); ?> />

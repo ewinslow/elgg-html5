@@ -4,8 +4,7 @@ $defaults = array(
 	'placeholder' => elgg_echo('placeholder:text'),
 );
 
-$overrides = array(
-	'type' => 'text',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-echo elgg_view('html/input', array_merge($defaults, $vars, $overrides));
+<input type="text" <?php echo html5_get_html_attributes($vars); ?> />

@@ -10,17 +10,24 @@
  * @link http://elgg.org/
  *
  * @uses $vars['body'] The body of the form (made up of other input/xxx views and html
- * @uses $vars['method'] Method (default POST)
- * @uses $vars['enctype'] How the form is encoded, default blank
- * @uses $vars['action'] URL of the action being called
  * @uses $vars['disable_security'] Force the securitytokens not to be added to this form (@todo what's the point??)
  *
  */
+$defaults = array(
+	'body' => '',
+	'method' => 'POST',
+);
+
+$vars = array_merge($defaults, $vars);
 
 if ($vars['disable_security'] != TRUE) {
-	$vars['body'] .= elgg_view('input/securitytoken');
+	$body .= elgg_view('input/securitytoken');
 }
-
 unset($vars['disable_security']);
 
-echo elgg_view('html/form', $vars);
+$body = $vars['body'];
+unset($vars['body']);
+
+$attributes = html5_get_html_attributes($vars);
+
+echo "<form $attributes>$body</form>";

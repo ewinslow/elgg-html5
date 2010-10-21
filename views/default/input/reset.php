@@ -4,8 +4,7 @@ $defaults = array(
 	'value' => elgg_echo('reset'),
 );
 
-$overrides = array(
-	'type' => 'reset',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-echo elgg_view('html/input', array_merge($defaults, $vars, $overrides));
+<input type="reset" <?php echo html5_get_html_attributes($vars); ?> />

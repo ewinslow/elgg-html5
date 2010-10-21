@@ -4,10 +4,7 @@ $defaults = array(
 	'value' => elgg_echo('submit'),
 );
 
-$overrides = array(
-	'type' => 'submit',
-);
+$vars = array_merge($defaults, $vars);	
+?>
 
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('html/input', $args);
+<input type="submit" <?php echo html5_get_html_attributes($vars); ?> />

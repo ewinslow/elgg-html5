@@ -9,13 +9,7 @@
  * @link http://elgg.org/
  *
  * @uses $vars['value'] The current value, if any - string or array - tags will be encoded
- * @uses $vars['js'] Any Javascript to enter into the input tag
- * @uses $vars['internalname'] The name of the input field
- * @uses $vars['internalid'] The id of the input field
- * @uses $vars['class'] CSS class override
- * @uses $vars['disabled'] Is the input field disabled?
  */
-
 
 $defaults = array(
 	'class' => 'input-tags',

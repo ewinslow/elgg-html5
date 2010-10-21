@@ -4,8 +4,7 @@ $defaults = array(
 	'placeholder' => elgg_echo('placeholder:time'),
 );
 
-$overrides = array(
-	'type' => 'time',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-echo elgg_view('html/input', array_merge($defaults, $vars, $overrides));
+<input type="time" <?php echo html5_get_html_attributes($vars); ?> />

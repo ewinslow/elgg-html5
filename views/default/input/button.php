@@ -1,9 +1,1 @@
-<?php
-
-$overrides = array(
-	'type' => 'button',
-);
-
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('html/input', $args);
+<input type="button" <?php echo html5_get_html_attributes($vars); ?> />

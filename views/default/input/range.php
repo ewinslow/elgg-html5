@@ -4,8 +4,7 @@ $defaults = array(
 
 );
 
-$overrides = array(
-	'type' => 'range',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-echo elgg_view('html/input', array_merge($defaults, $vars, $overrides));
+<input type="range" <?php echo html5_get_html_attributes($vars); ?> />

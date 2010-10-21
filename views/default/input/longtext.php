@@ -18,4 +18,9 @@ $defaults = array(
 	'class' => 'input-richtext',
 );
 
-echo elgg_view('html/textarea', array_merge($defaults, $vars));
+$value = $vars['value'];
+unset($vars['value']);
+
+$attributes = html5_get_html_attributes(array_merge($defaults, $vars));
+
+echo "<textarea $attributes>$value</textarea>";

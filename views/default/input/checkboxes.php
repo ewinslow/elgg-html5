@@ -25,32 +25,27 @@
 
 $defaults = array(
 	'class' => 'input-checkboxes',
-	'default' => 0,
 	'disabled' => FALSE,
 );
 
-$args = array_merge($defaults, $vars);
+$vars = array_merge($defaults, $vars);
 
-$value_array = (is_array($args['value'])) ? array_map('strtolower', $args['value']) : array(strtolower($args['value']));
+$value = $vars['value'];
+unset($vars['value']);
 
-$options = $args['options'];
+$value_array = (is_array($value)) ? array_map('strtolower', $value) : array(strtolower($value));
+
+$options = $vars['options'];
+unset($vars['options']);
 
 if ($options) {
-	// include a default value so if nothing is checked 0 will be passed.
-	if ($args['internalname']) {
-		echo elgg_view('input/hidden', array('internalname' => $args['internalname'], 'value' => $args['default']));
-	}
-	
-	foreach($options as $option => $label) {
-		$opts = array(
-			'value' => $option,
-			'checked' => in_array(strtolower($option), $value_array),
-			'class' => $args['class'],
-			'disabled' => $args['disabled'],
-			'js' => $args['js'],
-			'internalname' => $args['internalname'].'[]',
-		);
-		
-		echo "<label>".elgg_view('input/checkbox', $opts)."$label</label><br />";
+	foreach($options as $value => $label) {
+		echo "<label>";
+		echo elgg_view('input/checkbox', array_merge($vars, array(
+			'value' => $value,
+			'internalname' => $vars['internalname'].'[]',
+			'checked' => in_array(strtolower($value), $value_array),
+		)));
+		echo "$label</label><br />";
 	}
 }

@@ -1,9 +1,1 @@
-<?php
-
-$overrides = array(
-	'type' => 'checkbox',
-);
-
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('html/input', $args);
+<input type="checkbox" <?php echo html5_get_html_attributes($vars); ?> />

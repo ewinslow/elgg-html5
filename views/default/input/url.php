@@ -4,10 +4,7 @@ $defaults = array(
 	'placeholder' => elgg_echo('placeholder:url'),
 );
 
-$overrides = array(
-	'type' => 'url',
-);
+$vars = array_merge($defaults, $vars);
+?>
 
-$args = array_merge($vars, $overrides);
-
-echo elgg_view('html/input', $args);
+<input type="url" <?php echo html5_get_html_attributes($vars); ?> />
