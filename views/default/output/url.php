@@ -8,7 +8,7 @@
  * @author Curverider Ltd
  * @link http://elgg.org/
  *
- * @uses string $vars['href'] The string to display in the <a></a> tags
+ * @uses string $vars['body'] The html to insert between the <a></a> tags
  * @uses string $vars['text'] The string between the <a></a> tags.
  * @uses bool $vars['is_action'] Is this a link to an action?
  *
@@ -44,4 +44,4 @@ if (!isset($body)) {
 
 $vars['href'] = $url;
 $attributes = html5_get_html_attributes($vars);
-echo "<a $attributes>$text</a>";
+echo "<a $attributes>$body</a>";
