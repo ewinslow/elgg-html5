@@ -20,13 +20,13 @@ $defaults = array(
 
 $vars = array_merge($defaults, $vars);
 
+$body = $vars['body'];
+unset($vars['body']);
+
 if ($vars['disable_security'] != TRUE) {
 	$body .= elgg_view('input/securitytoken');
 }
 unset($vars['disable_security']);
-
-$body = $vars['body'];
-unset($vars['body']);
 
 $attributes = html5_get_html_attributes($vars);
 
