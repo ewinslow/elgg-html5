@@ -6,6 +6,6 @@ $defaults = array(
 	'border' => 0,
 );
 
-$attributes = html5_get_html_attributes(array_merge($defaults, $vars));
+$attributes = elgg_format_attributes(array_merge($defaults, $vars));
 
 echo "<img $attributes />";

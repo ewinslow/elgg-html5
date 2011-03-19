@@ -1,1 +1,1 @@
-<input type="image" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="image" <?php echo elgg_format_attributes($vars); ?> />

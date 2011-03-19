@@ -1,1 +1,1 @@
-<input type="color" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="color" <?php echo elgg_format_attributes($vars); ?> />

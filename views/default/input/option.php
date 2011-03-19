@@ -8,6 +8,6 @@ if (!isset($text)) {
 }
 
 $text = htmlentities($text, ENT_QUOTES, 'UTF-8');
-$attributes = html5_get_html_attributes($vars);
+$attributes = elgg_format_attributes($vars);
 
 echo "<option $attributes>$text</option>";

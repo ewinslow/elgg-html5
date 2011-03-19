@@ -43,5 +43,5 @@ if (!isset($body)) {
 }
 
 $vars['href'] = $url;
-$attributes = html5_get_html_attributes($vars);
+$attributes = elgg_format_attributes($vars);
 echo "<a $attributes>$body</a>";

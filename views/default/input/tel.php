@@ -6,4 +6,4 @@ $defaults = array(
 $vars = array_merge($defaults, $vars);
 ?>
 
-<input type="tel" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="tel" <?php echo elgg_format_attributes($vars); ?> />

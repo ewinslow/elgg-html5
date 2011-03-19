@@ -1,1 +1,1 @@
-<input type="number" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="number" <?php echo elgg_format_attributes($vars); ?> />

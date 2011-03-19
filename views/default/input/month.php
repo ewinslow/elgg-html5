@@ -4,4 +4,4 @@ if (isset($vars['value']) && is_int($vars['value'])) {
 }
 ?>
 
-<input type="month" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="month" <?php echo elgg_format_attributes($vars); ?> />

@@ -7,4 +7,4 @@ $defaults = array(
 $vars = array_merge($defaults, $vars);
 ?>
 
-<input type="time" <?php echo html5_get_html_attributes($vars); ?> />
+<input type="time" <?php echo elgg_format_attributes($vars); ?> />
