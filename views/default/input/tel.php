@@ -1,9 +1,12 @@
 <?php
 $defaults = array(
-	'placeholder' => elgg_echo('placeholder:tel'),
+	'class' => 'elgg-input-tel',
 );
 
 $vars = array_merge($defaults, $vars);
+
+$vars['type'] = 'tel';
+
 ?>
 
-<input type="tel" <?php echo elgg_format_attributes($vars); ?> />
+<input <?php echo elgg_format_attributes($vars); ?> />

@@ -1,10 +1,13 @@
 <?php
 
 $defaults = array(
-	'placeholder' => elgg_echo('placeholder:time'),
+	'class' => 'elgg-input-time',
 );
 
 $vars = array_merge($defaults, $vars);
+
+$vars['type'] = 'time';
+
 ?>
 
-<input type="time" <?php echo elgg_format_attributes($vars); ?> />
+<input <?php echo elgg_format_attributes($vars); ?> />

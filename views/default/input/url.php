@@ -1,10 +1,13 @@
 <?php
 
 $defaults = array(
-	'placeholder' => elgg_echo('placeholder:url'),
+	'class' => 'elgg-input-url',
 );
 
 $vars = array_merge($defaults, $vars);
+
+$vars['type'] = 'url';
+
 ?>
 
-<input type="url" <?php echo elgg_format_attributes($vars); ?> />
+<input <?php echo elgg_format_attributes($vars); ?> />

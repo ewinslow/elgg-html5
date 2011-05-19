@@ -1,10 +1,13 @@
 <?php
 
 $defaults = array(
-	'placeholder' => elgg_echo('placeholder:search'),
+	'class' => 'elgg-input-search',
 );
 
 $vars = array_merge($defaults, $vars);
+
+$vars['type'] = 'search';
+
 ?>
 
-<input type="search" <?php echo elgg_format_attributes($vars); ?> />
+<input <?php echo elgg_format_attributes($vars); ?> />
