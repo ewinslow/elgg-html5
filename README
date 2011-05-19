@@ -1,0 +1,7 @@
+# HTML5 Plugin for Elgg #
+Provides several javascript libraries + views that allow developers to start using HTML5 features in Elgg today.
+
+## Features ##
+* HTML5 input views
+* Modernizr javascript library for easy html5 feature detection
+* Javascript shim for the placeholder attribute

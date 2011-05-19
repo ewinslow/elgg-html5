@@ -3,7 +3,9 @@
 	<name>HTML5</name>
 	<author>Evan Winslow</author>
 	<version>1.0</version>
-	<description>Provides HTML5 support for Elgg</description>
+	<description>
+		Provides several javascript libraries + views that allow developers to start using HTML5 features in Elgg today.
+	</description>
 	<copyright>(C) Evan Winslow 2010</copyright>
     <website>http://github.com/ewinslow/elgg-html5</website>
 	<requires>
